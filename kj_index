@@ -1,0 +1,129 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+    <meta charset="UTF-8">
+    <title>Document</title>
+    <link href="styles.css" rel="stylesheet">
+    <!--ADD TO .JS FILE --- Font Awesome v4.6.3 · Auto Accessibility · Asynchronous Icons-->
+<script src="https://use.fontawesome.com/b451a1c7e2.js"></script>
+</head>
+<body>
+   <nav>
+       <ul>
+           <li><a href="#">HOME</a></li>
+           <li><a href="#">ABOUT</a></li>
+           <li><a href="#">CONTACT</a></li>
+       </ul>
+   </nav>
+<header style="background-color:#dedede"><h1>HEADER</h1>
+</header>   
+<section>
+    <div class="col col-6-12" style="background-color:#dedede">
+       <h1>h1</h1>
+        <p><small>SMALL p col col-6-12</small> Lorem ipsum dolor sit amet, consectetur adipisicing elit. Pariatur voluptas odio laudantium. Cumque aspernatur nesciunt minima quaerat, culpa. Temporibus est labore voluptatem commodi alias provident officia impedit et repellat modi?</p>
+    </div>
+     <div class="col col-6-12" style="background-color:#dedede">
+        <h2>h2</h2>
+         <p><strong>STRONG p col col-6-12  </strong>Lorem ipsum dolor sit amet, consectetur adipisicing elit. Nisi saepe pariatur nulla eaque nemo, delectus nostrum id nam accusantium similique distinctio praesentium numquam sapiente nobis repellendus quia iste, possimus doloremque.</p>
+     </div>
+</section>
+<section>
+    <div class="col col-4-12" style="background-color:#dedede">
+       <h3>h3</h3>
+        <p><blockquote> BLOCKQUOTE Lorem ipsum dolor sit amet,  </blockquote>consectetur adipisicing elit. Quidem architecto doloremque non sit.Animi nostrum asperiores accusamus amet consequuntur, velit consequatur repellat facere vitae earum cumque quasi dolore facilis sequi.</p>
+    </div>
+    <div class="col col-4-12" style="background-color:#dedede">
+        <h3>h3</h3>
+        <p class="grow">Lorem ipsum dolor sit amet, consectetur adipisicing elit. Quidem architecto doloremque non sit. Animi nostrum asperiores accusamus amet consequuntur, velit consequatur repellat facere vitae earum cumque quasi dolore facilis sequi.</p>
+    </div>
+    <div class="col col-4-12" style="background-color:#dedede">
+        <h3>h3</h3>
+        <p>Lorem ipsum dolor sit amet, consectetur adipisicing elit. Quidem architecto doloremque non sit. Animi nostrum asperiores accusamus amet consequuntur, velit consequatur repellat facere vitae earum cumque quasi dolore facilis sequi.</p>
+    </div>
+</section>
+<section>
+   <!--      <div class='ez-form-info'>Required fileds are marked with an asterisk (*)</div>    -->
+
+    <form class="group" style="background-color:#dedede">
+        <fieldset>
+            <div class="col col-4-12">
+                <legend>Personal Information</legend>
+          
+                  <label for='firstName'>First Name <span>(Required)</span> </label>
+                  <input type='text' name='firstName' placeholder='John'>
+                  <div class='ez-form-clear'></div>
+
+                  <label for='lastName'>Last Name <span>(Required)</span></label>
+                  <input type='text' name='lastName' placeholder='Doe'>
+            </div>
+           <div class="col col-4-12">
+               <legend>Contact Information</legend>
+                  <label for='email'>Email <span class='ez-form-span-mobile'>*</span> <span class='ez-form-span-desktop'>(Required)</span> </label>
+                  <input type='text' name='email' placeholder='johnDoe@gmail.com'>
+                  <div class='ez-form-clear'></div>
+
+                  <label for='telephone'>Telephone </label>
+                  <input type='text' name='telephone' placeholder='555.554.6786'>
+                  <div class='ez-form-clear'></div>
+
+                  <label for='contact'>Prefered Contact</label>
+                  <input type='radio' name='contact' value='email'>Email
+                  <input type='radio' name='contact' value='phone'>Phone
+                  <div class='ez-form-clear'></div>
+
+                  <label>Reason for Contact </label>
+                  <select class='ez-form-select'>
+                     <option value='selectOne'>Select One</option>
+                     <option value='career'>Career Opportunities</option>
+                     <option value='volunteer'>Volunteer work</option>
+                  </select>
+                  <div class='ez-form-clear'></div>
+            </div>
+            <div class="col col-4-12">
+                <legend>Other Information</legend> 
+                 <label for=interest>I am interested in </label>
+                      <input type='checkbox' name='interest'>HTML
+                      <input type='checkbox' name='interest'>CSS
+                      <input type='checkbox' name='interest'>javaScript
+                      <input type='checkbox' name='interest'>jQuery
+                  <div class='ez-form-clear'></div>
+                  <label for='comments'>Comments</label>
+                  <textarea placeholder='Thank you for visiting our site'></textarea>
+
+                  <input type='submit' value='Submit'>
+            </div>
+            
+            
+        </fieldset>
+    </form>
+</section>
+<section>
+    <div>
+    <p>Fontawesome accessibility use</p>
+    <!--Font Awesome CDN's auto accessibility feature will try to apply a fallback alternative for the icon based on any any alternatives and configuration you set on the icon.-->
+          <input type="search">
+           <!--DECORATIVE purpose-->
+            <button type="submit">
+                <i class="fa fa-arrow-right" title="Submit My Tax Return"></i>
+                </button>
+                <!--SEMANTIC/INTERACTIVE purpose-->
+                <button type="submit">
+                    <i class="fa fa-envelope"></i> Email Us!
+                </button>
+                        <!--EXAMPLE OF Fontawesome JS-->
+                      <button type="submit">
+                      <i class="fa fa-arrow-right" title="Submit My Tax Return"></i>
+                      <span class="sr-only">Submit My Tax Return</span>
+                    </button>
+                    <button type="submit">
+                      <i class="fa fa-envelope" aria-hidden=”true”></i> Email Us!
+                    </button>
+                  </div>
+</section>    
+<hr>      
+<footer style="background-color:#dedede"><h4>Footer</h4>
+</footer>
+
+        
+</body>
+</html>
