@@ -1,0 +1,826 @@
+
+/*BODY*/
+
+
+html{
+    position: relative;
+    min-height: 100%;
+}
+body{
+    height:100%;
+    font-size: 1.25em;
+    /*  footer height  */
+    margin-bottom: 45px;
+    font-family: "HelveticaNeue-Light", "Helvetica Neue Light", "Helvetica Neue", Helvetica, Arial, "Lucida Grande", sans-serif; 
+    font-weight: 300;
+    background-color:#fff;
+    line-height: 1.7rem;
+}
+
+/*   --- HELPER CLASSES: ----*/
+/*.hide/display:none class makes content "inaccessible" by screen readers. Hide class should position the content off screen, which still leaves it screen reader accessible */
+
+/*hides elements visually, but keep them available for screen-readers.*/
+.invisible {
+   position: absolute !important;
+   top: -9999px !important;
+   left: -9999px !important;
+}
+/*OR / ALTERNATIVE TO .invisible */
+.element-invisible {
+  position: absolute !important;
+  height: 1px;
+  width: 1px;
+  overflow: hidden;
+  clip: rect(1px 1px 1px 1px);
+}
+
+/*elements which should not be immediately displayed to any user.*/
+.remember-this-will-NOT-be-read {
+   display: none !important;
+}
+
+/*extends the .element-invisible class to allow the element to be focusable when navigated to via the keyboard. OR// .invisible */
+.element-invisible.element-focusable:active,
+.element-invisible.element-focusable:focus 
+{
+  position: static; 
+  clip: auto; 
+  height: inherit !important; 
+  width: inherit !important; 
+  overflow: inherit !important;
+}
+
+
+
+/*    GROW on hover     */
+.grow { transition: all .2s ease-in-out; }
+.grow:hover { transform: scale(1.2); cursor:pointer;}
+
+/*Some elements that are clickable mysteriously don't trigger a pointer cursor in browsers. This fixes that, and provides a default class "pointer" for applying it to other clickable things as needed*/
+a[href], input[type='submit'],input[type='reset'], input[type='image'], label[for], select, button,[type="checkbox"],
+ [type="radio"], .pointer {
+       cursor: pointer;
+}
+/*Help text should be explicitly associated with the form control it relates to.This will ensure that assistive technologies – such as screen readers – will announce this help text when the user focuses or enters the control.*/
+aria-describedby{}
+
+/*appropriate alternative text. FOR Contextual/Validation classes*/
+.sr-only{}
+
+h1, 
+h2, 
+h3, 
+h4, 
+h5, 
+h6{
+  margin-top: 10px;
+  margin-bottom: 1rem;
+    color:inherit;
+    font-family: inherit;
+    line-height: 1.1;
+  
+}
+
+h1 {
+  font-size: 2.5em;
+}
+h2{
+    font-size: 1.8em;
+}
+h3{
+    font-size: 1.4em;
+}
+
+p{margin: 0 0 10px;}
+
+hr {
+    margin-top: 20px;
+    margin-bottom: 20px;
+    border: 0;
+    border-top: 1px solid #eee;
+    overflow-x: visible;
+}
+
+a {
+  background-color: transparent;  
+}
+
+
+abbr[title] {
+  border-bottom: 1px dotted #777; 
+  cursor: help; 
+}
+
+article,
+aside,
+footer,
+figcaption,
+figure,
+footer,
+hgroup,
+header,
+main,
+nav,
+section {
+  display: block;
+}
+
+details,
+menu {
+  display: block;
+}
+
+figure {
+  margin: 1em 40px;
+}
+
+footer{
+    left: 0; bottom: 0;
+    height: 50px;
+    width: 100%;
+    position: absolute;
+}
+
+header{
+    margin-bottom: 1rem;
+}
+
+mark {
+  background-color: #ff0;
+  color: #000;
+}
+
+
+q:before, 
+blockquote:before {
+    top: 0;
+    left: 0;
+    font-family: "FontAwesome";
+    content: "\201C";
+}
+q:after, 
+blockquote:after {
+    top: 0;
+    right: 0;
+    content: "\201D";
+}
+
+small, 
+.small{
+    font-size: 85%;
+}
+
+summary {
+  display: list-item;
+}
+del{text-decoration: line-through;}
+/*define replaced or deleted text*/
+s{text-decoration: line-through;}
+/*The <ins> tag defines a text that has been inserted into a document.Together with <del> to markup updates and modifications in a document.*/
+ins{text-decoration: underline;}
+u{text-decoration: underline;}
+strong,
+b{font-weight: bold;}
+em, i{font-style: italic;}
+
+/* --------------- LIST --------------*/
+ul,
+ol {
+  margin-top: 0;
+  margin-bottom: 10px;
+}
+ul ul,
+ol ul,
+ul ol,
+ol ol {
+  margin-bottom: 0;
+}
+.list-unstyled {
+  padding-left: 0;
+  list-style: none;
+}
+.list-inline {
+  padding-left: 0;
+  margin-left: -5px;
+  list-style: none;
+}
+.list-inline > li {
+  display: inline-block;
+  padding-right: 5px;
+  padding-left: 5px;
+}
+dl {
+  margin-top: 0;
+  margin-bottom: 20px;
+}
+dt,
+dd {
+  line-height: 1.42857143;
+}
+dt {
+  font-weight: bold;
+}
+dd {
+  margin-left: 0;
+}
+@media (min-width: 768px) {
+  .dl-horizontal dt {
+    float: left;
+    width: 160px;
+    overflow: hidden;
+    clear: left;
+    text-align: right;
+    text-overflow: ellipsis;
+    white-space: nowrap;
+  }
+  .dl-horizontal dd {
+    margin-left: 180px;
+  }
+}
+/* ----------- ALIGNMENT CLASSES ----------*/
+.text-left{text-align: left;}
+.text-right{text-align: right;}
+.text-center{text-align: center;}
+.text-justify{text-align: justify;}
+.text-nowrap{white-space: nowrap;}
+/* ----------- TEXT TRANSFORM CLASSES -----*/
+.text-lowercase{text-transform: lowercase;}
+.text-uppercase{text-transform: uppercase;}
+.text-capitalized{text-transform: capitalize;}
+/* ----------- VALIDATION/CONTEXTUAL CLASSES -----*/
+/*Applies the hover color to a particular row or cell*/
+.active{}
+/*Indicates a neutral informative change or action*/
+.info
+/*Indicates a successful or positive action*/
+.success{}
+/*Indicates a warning that might need attention*/
+.warning{}
+/*Indicates a dangerous or potentially negative action*/
+.danger{}
+
+.text-info{color:;}
+a.text-info{color:;}
+a.text-info:hover,
+a.text-info:focus{color:#245269;}
+.bg-info{color:#fff; background-color:#337ab7;}
+a.bg-info:hover,
+a.bg-info:focus {
+  background-color: #286090;
+}
+
+
+.btn-info{}
+.label-info{}
+.alert{}
+
+/* -------- MEDIA -------*/
+/*********************    START OF RESPONSIVE IMAGES STYLES    **********************/
+
+.ez-img img {
+    margin;0;
+    width:100%;
+    height: auto;
+}
+.ez-img[alt], .ez-img figcaption {
+    font: italic 1em 'Vollkorn', 'sans-serif';
+    float:right;
+}
+
+/*********************    END OF RESPONSIVE IMAGES STYLES    **********************/
+
+audio,
+video {
+  display: inline-block;
+}
+
+audio:not([controls]) {
+  display: none;
+  height: 0;
+}
+
+caption{
+    text-align: left; 
+    caption-side: bottom;}
+
+
+/* --------- GRID ----------*/
+/*hidden Removes an item from the page, without affecting page flow or causing scrollbars. Much better than display: none; or even visibility: hidden*/
+[hidden]{
+    position: absolute;
+    top:-9999px;
+    left:-9999px;
+}
+
+/*  SECTIONS splits up the page horizontally. You'll need a few of these to break up the content, and you can use them in your main wrapper, or within other divs.  */
+section {
+	clear: both;
+	padding: 0px;
+	margin: 0px;
+}
+
+/*  COLUMN SETUP  divides the section into columns. Each column has a left margin except the first one. Using .col:first-child { margin-left: 0; } means you don't need to use class="last" anywhere. It works in all browsers since IE6.*/
+.col {
+	display: block;
+	float:left;
+	margin: 1% 0 1% 1.16%;
+}
+.col:first-child { margin-left: 0; }
+
+/*  GROUPING  solves floating problems, by forcing the section to self clear its children (aka the clearfix hack). This is good in Firefox 3.5+, Safari 4+, Chrome, Opera 9+ and IE 6+.*/
+.group:before,
+.group:after { content:""; display:table; }
+.group:after { clear:both;}
+.group { zoom:1; /* For IE 6/7 */ }
+
+/*  GRID OF TWELVE  specifies the width of the column. Using percentages means it's 100% fluid.*/
+.col-12-12 {
+	width: 100%;
+}
+
+.col-11-12 {
+  	width: 91.53%;
+}
+.col-10-12 {
+  	width: 83.06%;
+}
+
+.col-9-12 {
+  	width: 74.6%;
+}
+
+.col-8-12 {
+  	width: 66.13%;
+}
+
+.col-7-12 {
+  	width: 57.66%;
+}
+
+.col-6-12 {
+  	width: 49.2%;
+}
+
+.col-5-12 {
+  	width: 40.73%;
+}
+
+.col-4-12 {
+  	width: 32.26%;
+}
+
+.col-3-12 {
+  	width: 23.8%;
+}
+
+.col-2-12 {
+  	width: 15.33%;
+}
+
+.col-1-12 {
+  	width: 6.866%;
+}
+
+
+/*  GO FULL WIDTH BELOW 480 PIXELS @media queries as soon as the screen size gets less than 480 pixels the columns stack and the margins disappear.*/
+@media only screen and (max-width: 480px) {
+	.col {  margin: 1% 0 1% 0%; }
+    
+    .col-1-12, .col-2-12, .col-3-12, .col-4-12, .col-5-12, .col-6-12, .col-7-12, .col-8-12, .col-9-12, .col-10-12, .col-11-12, .col-12-12 {
+	width: 100%; 
+	}
+}
+@media (min-width: 768px){}
+@media (min-width: 992px){}
+@media (min-width: 1200px){}
+
+
+
+/*     Start of bordered table     */
+
+.ez-table-bordered {
+    background-color: rgba(0, 0, 0, 0.4);
+    width:90%;
+    margin: 5px auto;
+    border: 1px solid black;
+    text-align:center;
+    box-shadow: 5px 5px 10px rgba(0, 0, 0, 0.13);
+    -webkit-box-shadow: 5px 5px 10px rgba(0, 0, 0, 0.13);
+    -moz-box-shadow: 5px 5px 10px rgba(0, 0, 0, 0.13);
+    overflow-x:auto;
+}
+
+.ez-table-bordered caption { 
+    font: 2em 'Abril Fatface', 'sans-serif';
+    text-align:left;
+}
+
+.ez-table-bordered th, .ez-table-bordered td {
+    border: 1px solid black;
+}
+.ez-table-bordered-th th{
+    padding:1.5em;
+    font: 1em 'Abril Fatface', 'sans-serif';
+    background-color: #a70900;
+    color: white; 
+}
+.ez-table-bordered tr:nth-child(even) {
+    background-color: #e8e8e8;
+}
+.ez-table-bordered tr:nth-child(odd) {
+    background-color: white;
+}
+.ez-table-bordered td {
+    padding:1em;
+}
+
+/*     End of bordered table     */
+
+
+/*     Start of Responsive table     */
+
+.ez-responsive {
+    font-family: 'vollkorn', 'sans-serif';
+    border: 1px solid black;
+    width:90%;
+    margin: 0 auto;
+    border-collapse: collapse;
+    border-spacing:0;
+    box-shadow: 5px 5px 10px rgba(0, 0, 0, 0.13);
+    -webkit-box-shadow: 5px 5px 10px rgba(0, 0, 0, 0.13);
+    -moz-box-shadow: 5px 5px 10px rgba(0, 0, 0, 0.13);
+}
+.ez-responsive caption { 
+    font: 2em 'Abril Fatface', 'sans-serif';
+    text-align:left;
+}
+.ez-responsive tr {
+    border: 1px solid #ddd;
+    padding: 5px;
+    background-color:#a8a8a8;
+}
+
+.ez-responsive th, .ez-responsive td {
+    padding: 10px;
+    text-align: center;
+}
+.ez-responsive th {
+    font: bold 1.2em 'Abril Fatface', 'verdana', 'arial';
+    text-transform: uppercase;
+    letter-spacing: 1px;
+}
+@media screen and (max-width: 600px) {
+    .ez-responsive{
+        border: 0;
+        box-shadow: 0px 0px 0px rgba(0, 0, 0, 0.13);
+        -webkit-box-shadow: 0px 0px 0px rgba(0, 0, 0, 0.13);
+        -moz-box-shadow: 0px 0px 0px rgba(0, 0, 0, 0.13);
+    }
+    .ez-responsive thead {
+        display: none;
+    }
+    .ez-responsive tr {
+        margin-bottom: 15px;
+        display:block;
+        border-bottom: 1px solid #ddd;
+        box-shadow: 5px 5px 10px rgba(0, 0, 0, 0.13);
+        -webkit-box-shadow: 5px 5px 10px rgba(0, 0, 0, 0.13);
+        -moz-box-shadow: 5px 5px 10px rgba(0, 0, 0, 0.13);
+    }
+    .ez-responsive td {
+        display:block;
+        text-align:right;
+        font-size: 15px;
+        border-bottom: 2px dotted #ccc;
+    }
+    .ez-responsive td:last-child {
+        border-bottom: 0;
+    }
+    .ez-responsive td:before {
+        content: attr(data-label);
+        float:left;
+        text-transform: uppercase;
+        font: bold 1.2em 'Abril Fatface', 'verdana', 'arial';
+    }
+}
+
+
+/*     End of Responsive table     */
+
+
+/*     Start of Striped table     */
+
+.ez-table-striped {
+    background-color: rgba(190, 232 255, 1); /* #bee8ff */
+    border-collapse: collapse;
+    width:100%;
+    font: 1em 'vollkorn', 'verdana', 'san-serif';
+     box-shadow: 5px 5px 10px rgba(0, 0, 0, 0.13);
+    -webkit-box-shadow: 5px 5px 10px rgba(0, 0, 0, 0.13);
+    -moz-box-shadow: 5px 5px 10px rgba(0, 0, 0, 0.13);
+}
+.ez-table-striped caption { 
+    font: 2em 'Abril Fatface', 'sans-serif';
+    text-align:left;
+}
+.ez-table-striped-row:nth-child(odd) {
+    background-color: rgba(98, 200, 255, .5); /* 62c8ff */
+}
+.ez-table-striped-td {
+    padding: 1.5em;
+    margin:0;
+    text-align:center;
+}
+.ez-table-striped-th-col {
+    font: bold 1.2em 'Abril Fatface', 'verdana', 'arial';
+    background-color: #005988;
+    color:#fff;
+}
+
+/*     End of Striped table     */
+
+
+
+/*********************    END OF TABLE STYLES    **********************/
+
+
+/*********************    START OF FORM STYLES    **********************/
+
+.ez-form {
+    width: 95%;
+    margin: 5px auto;
+    border-radius: 10px;
+    -webkit-border-radius:10px;
+    -moz-border-radius:10px;
+    box-shadow:0px 0px 10px rgba(0, 0, 0, 0.13);
+    -webkit-box-shadow:0px 0px 10px rgba(0, 0, 0, 0.13);
+    -moz-box-shadow:0px 0px 10px rgba(0, 0, 0, 0.13)
+}
+.ez-form h1 {
+    background-color: #00795b;
+    border-radius:10px 10px 0 0;
+    -webkit-border-radius:10px 10px 0 0;
+    -moz-border-radius:10px 10px 0 0;
+    box-shadow: inset 0px 4px 5px 0px rgba(255, 255, 255, 0.27);
+    -webkit-box-shadow: inset 0px 4px 5px 0px rgba(255, 255, 255, 0.27);
+    -moz-box-shadow: inset 0px 4px 5px 0px rgba(255, 255, 255, 0.27);
+    color:#fff;
+    font-size: 1.5em;
+    font-family: 'Rubik', 'verdana', 'sans-serif';
+    padding: 10px 0px 5px 10px;
+}
+.ez-form h1 span {
+    display:block;
+    font-size:.7em
+}
+.ez-form fieldset {
+    background-color: #fcf2d3;
+    width: 90%;
+    margin: 0 auto;
+    border-radius:6px;
+    margin-bottom: 15px;
+}
+.ez-form fieldset legend {
+    font: 1em 'Rubik', 'verdana', 'sans-serif';
+    text-transform:uppercase;
+}
+
+/*to use placeholder text as a label replacement, use an accessible hiding technique for the labels.*/
+
+.ez-form label {
+    display:block;
+    width: 95%;
+    text-align:center;
+}
+.ez-form-span-mobile {
+    font-size:1em;
+}
+.ez-form-span-desktop {
+    display:none;
+}
+.ez-form input[type='text'], .ez-form input[type='submit'], .ez-form textarea, .ez-form select {
+    display:block;
+    width: 95%;
+    margin:5px auto;
+    text-align:center;
+    box-sizing:border-box;
+    -webkit-box-sizing:border-box;
+    -moz-box-sizing:border-box;
+    border-radius:6px;
+    -webkit-border-radius:6px;
+    -moz-border-radius:6px;
+    box-shadow: inset 0px 1px 1px rgba(0, 0, 0, 0.33);
+    -webkit-box-shadow: inset 0px 1px 1px rgba(0, 0, 0, 0.33);
+    -moz-box-shadow: inset 0px 1px 1px rgba(0, 0, 0, 0.33);
+    height: 25px;
+    
+}
+.ez-form input[type='button'], .ez-form input[type='submit'] {
+    background-color:#00795b;
+    color: #fff;
+}
+.ez-form input[type='button']:hover, .ez-form input[type='submit']:hover {
+    background: #00b68c;
+    color:#000
+}
+.ez-form textarea { height: 70px }
+
+.ez-form input[type='radio'], .ez-form input[type='checkbox'] {
+   align-items: center;
+    
+}
+.ez-form select {
+    display: block;
+    margin:5px auto;
+}
+    
+@media only screen and (min-width: 450px) {
+    
+}
+
+@media only screen and (min-width: 960px) {
+    .ez-form {
+        max-width:900px;
+        margin: 10px auto;
+    }
+    .ez-form h1 {
+        padding:20px 30px 15px 30px;
+        font-size:3em;
+    }
+    .ez-form h1 span {
+        display:block;
+        font-size:.5em;
+        font-family: 'Verdana', 'sans-serif';
+    }
+    .ez-form fieldset {
+        margin:15px;
+        padding: 30px;
+    }
+    .ez-form fieldset legend { font-size: 2em }
+    .ez-form label {
+        float:left;
+        width: 200px;
+        margin: 10px 10px;
+        text-align:right;
+        clear:left;
+    }
+    .ez-form label span {
+        display:block;
+        font-size:.75em;
+    }
+    .ez-form-span-mobile {
+        display:none;
+    }
+    .ez-form-span-desktop {
+        display:none;
+    }
+    .ez-form input[type='text'], .ez-form input[type='submit'], .ez-form textarea, .ez-form select {
+        width: 300px;
+        height: 35px;
+        margin: 10px 10px;
+    }
+    .ez-form input[type='submit'] { margin-left: 220px }
+    
+    .ez-form textarea { height: 100px }
+
+    .ez-form input[type='radio'], .ez-form input[type='checkbox'] {
+        height: 15px;
+        width: 15px;
+        margin: 10px 10px;
+    }
+    .ez-form select {
+        margin: 10px 10px;
+    }
+    .ez-form-clear {
+        clear:both;
+    }
+    
+}
+
+/*********************    END OF FORM STYLES    **********************/
+
+
+fieldset{
+    border:0; 
+    padding:0.35 0.75em 0.625em; margin:0;}
+
+button, 
+input, 
+optgroup, 
+select, 
+textarea {
+    font-size: 100%; 
+    line-height: 1.15; 
+    margin:0;}
+
+label{
+    display:block;
+}
+
+[type="checkbox"],
+[type="radio"] {
+  box-sizing: border-box;   
+}
+
+[type="search"] {
+  -webkit-appearance: textfield;
+    outline-offset: -2px;
+    border-radius: 15px;
+    height:1.6em;
+    letter-spacing:1px;
+    word-spacing: 2px;
+}
+
+input[type="search"]::-webkit-search-cancel-button {
+  /* Remove default 
+  -webkit-appearance: none;
+  /* Now your own custom styles */
+  height: 10px;
+  width: 10px;
+  background: red;
+  /* Will place small red box on the right of input (positioning carries over) */
+}
+
+
+ol,
+ul{
+    margin-top: 0; 
+    margin-bottom: 1rem; 
+    list-style: none;}
+
+
+
+/* --------- CODE ----------*/
+code, kbd, samp, pre{font-family: monospace; font-size: 1em;}
+
+code {
+  padding: 2px 4px;
+  font-size: 90%;
+  color: #c7254e;
+  background-color: #f9f2f4;
+  border-radius: 4px;
+}
+
+kbd {
+  padding: 2px 4px;
+  font-size: 90%;
+  color: #fff;
+  background-color: #333;
+  border-radius: 3px;
+  -webkit-box-shadow: inset 0 -1px 0 rgba(0, 0, 0, .25);
+          box-shadow: inset 0 -1px 0 rgba(0, 0, 0, .25);
+}
+kbd kbd {
+  padding: 0;
+  font-size: 100%;
+  font-weight: bold;
+  -webkit-box-shadow: none;
+          box-shadow: none;
+}
+pre {
+  display: block;
+  padding: 9.5px;
+  margin: 0 0 10px;
+  font-size: 13px;
+  line-height: 1.42857143;
+  color: #333;
+  word-break: break-all;
+  word-wrap: break-word;
+  background-color: #f5f5f5;
+  border: 1px solid #ccc;
+  border-radius: 4px;
+}
+pre code {
+  padding: 0;
+  font-size: inherit;
+  color: inherit;
+  white-space: pre-wrap;
+  background-color: transparent;
+  border-radius: 0;
+}
+
+var{}
+
+/* --------- BREAKPOINTS ----------*/
+
+@media only screen and (device-width: 768px) {
+  /* For general iPad layouts */
+}
+
+@media only screen and (min-device-width: 481px) and (max-device-width: 1024px) and (orientation:portrait) {
+  /* For portrait layouts only */
+}
+
+@media only screen and (min-device-width: 481px) and (max-device-width: 1024px) and (orientation:landscape) {
+  /* For landscape layouts only */
+}
+
+/* ------ NO-PRINT -----------*/
+@media print
+{    
+    .no-print, .no-print *
+    {
+        display: none !important;
+    }
+}
