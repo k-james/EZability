@@ -2,182 +2,128 @@
 <html lang="en">
 <head>
     <meta charset="UTF-8">
-    <title>EZability</title>
-    <link rel="stylesheet" type="text/css" href="/css/nav.css">
-    <link rel="stylesheet" type="text/css" href="/css/breadcrumb.css">
-	<link rel="stylesheet" type="text/css" href="/css/EZstyles.css">
-	<link rel="stylesheet" type="text/css" href="/css/buttons.css">
-	<link rel="stylesheet" type="text/css" href="/css/carousel.css">
-	<link rel="stylesheet" type="text/css" href="/css/rolloverZoom.css">
-	<link rel="stylesheet" type="text/css" href="/css/zoomID.css">
-	<link rel="stylesheet" type="text/css" href="/css/popUpHelpOnHover.css">
+    <title>Document</title>
+    <link href="styles.css" rel="stylesheet">
+    <!--ADD TO .JS FILE --- Font Awesome v4.6.3 · Auto Accessibility · Asynchronous Icons-->
+<script src="https://use.fontawesome.com/b451a1c7e2.js"></script>
 </head>
 <body>
-    <!-- START NAV MENU -->
-    <nav class="nav-menu" id="nav-component">
-        <ul>
-            <li><a href="#">Home</a></li>
-            <li><a href="#" class="active">About Us</a></li>
-            <li><a href="#">Support</a></li>
-            <li><a href="#">Contact Us</a></li>
-            <li class="dropdown-li right"><a href="" class="dropdown">Dropdown</a>
-                           <div class="dropdown-menu">
-                               <a href="">Sub-Menu 1</a>
-                               <a href="">Sub-Menu 2</a>
-                               <a href="">Sub-Menu 3</a>
-                           </div>
-            </li>
-            <li><a href="#" class="menu-icon">&#9776;</a></li>
-        </ul>
-    </nav>
-    <!-- END NAV MENU -->
-   
-   <br>
-    <!-- START BREADCRUMB -->
-    <ul id="breadcrumbs">
-      <li>
-        <a href="#" class="odd">You are Here:<span class="arrow"></span></a>
-      </li>
-      <li>
-        <a href="#">Home<span class="arrow"></span></a>
-      </li>
-      <li>
-        <a href="#" class="odd">About Us<span class="arrow"></span></a>
-      </li>
-      <li>
-        <a href="#">Support<span class="arrow"></span></a>
-      </li>
-      <li>
-        <a href="#" class="odd">Contact Us<span class="arrow last"></span></a>
-      </li>
-      <li class="active">
-        &nbsp;&nbsp;The currently selected page
-      </li>
-    </ul>
-    <!-- END BREADCRUMB -->
-	
-	<!-- JQUERY CODE/LINKS -->	
-	<script type="text/javascript" src="/js/zoomID.js"></script>
-	<script type="text/javascript" src="/js/popUpHelpOnHover.js"></script>
-	
-    <!-- SCRIPT FOR RESPONSIVE MOBILE MENU -->
-<!--
-    <script>
-        var menu = document.getElementById("nav-component");
-        
-        function responsiveMenu() {
-            if (menu.className === "nav-menu") {
-                menu.className += " responsive";
-            } else {
-                menu.className = "nav-menu";
-            }
-        }
-        menu.addEventListener("click", responsiveMenu);
-    </script>
--->
-    <!-- END SCRIPT FOR RESPONSIVE MOBILE MENU -->	
-	
-<!-- LEAH -->
- <div id="EZaccordion"><a href="#menu" class="menu">Accordion Menu</a><br><i class="down"></i>
-        <div id="EZaccordion-hidden">
-            <a href="index.html">Home</a>
-            <a href="nav1.html">Nav1</a>
-            <a href="nav2.html">Nav2</a>
-            <a href="nav3.html">Nav3</a>
-            <a href="nav4.html">Nav4</a>
-        </div>
+   <nav>
+       <ul>
+           <li><a href="#">HOME</a></li>
+           <li><a href="#">ABOUT</a></li>
+           <li><a href="#">CONTACT</a></li>
+       </ul>
+   </nav>
+<header style="background-color:#dedede"><h1>HEADER</h1>
+</header>   
+<section>
+    <div class="col col-6-12" style="background-color:#dedede">
+       <h1>h1</h1>
+        <p><small>SMALL p col col-6-12</small> Lorem ipsum dolor sit amet, consectetur adipisicing elit. Pariatur voluptas odio laudantium. Cumque aspernatur nesciunt minima quaerat, culpa. Temporibus est labore voluptatem commodi alias provident officia impedit et repellat modi?</p>
     </div>
-    <!-- IMAGE SLIDER --> 
-    <h1>EZslider</h1>   
-<div class=carousel>
-  <ul class=panes>
-    <li><img src="images/slider1.png" alt="" ></li>
-    <li><img src="images/slider2.png" alt=""></li>
-    <li><img src="images/slider3.png" alt=""></li>
-    <li><img src="images/slider1.png" alt=""></li>
+     <div class="col col-6-12" style="background-color:#dedede">
+        <h2>h2</h2>
+         <p><strong>STRONG p col col-6-12  </strong>Lorem ipsum dolor sit amet, consectetur adipisicing elit. Nisi saepe pariatur nulla eaque nemo, delectus nostrum id nam accusantium similique distinctio praesentium numquam sapiente nobis repellendus quia iste, possimus doloremque.</p>
+     </div>
+</section>
+<section>
+    <div class="col col-4-12" style="background-color:#dedede">
+       <h3>h3</h3>
+        <p><blockquote> BLOCKQUOTE Lorem ipsum dolor sit amet,  </blockquote>consectetur adipisicing elit. Quidem architecto doloremque non sit.Animi nostrum asperiores accusamus amet consequuntur, velit consequatur repellat facere vitae earum cumque quasi dolore facilis sequi.</p>
+    </div>
+    <div class="col col-4-12" style="background-color:#dedede">
+        <h3>h3</h3>
+        <p class="grow">Lorem ipsum dolor sit amet, consectetur adipisicing elit. Quidem architecto doloremque non sit. Animi nostrum asperiores accusamus amet consequuntur, velit consequatur repellat facere vitae earum cumque quasi dolore facilis sequi.</p>
+    </div>
+    <div class="col col-4-12" style="background-color:#dedede">
+        <h3>h3</h3>
+        <p>Lorem ipsum dolor sit amet, consectetur adipisicing elit. Quidem architecto doloremque non sit. Animi nostrum asperiores accusamus amet consequuntur, velit consequatur repellat facere vitae earum cumque quasi dolore facilis sequi.</p>
+    </div>
+</section>
+<section>
+   <!--      <div class='ez-form-info'>Required fileds are marked with an asterisk (*)</div>    -->
 
-    <li>
-      <p>Caption 2</p>
-   <img src="images/slider2.png" alt="">
-    </li>
-    <li>
-      <p>Caption 3</p>
-     <img src="images/slider3.png" alt="">
-    </li>   
-      </ul>
-</div>
-	  
-    <div id="EZcontainer">
-    
-    <!-- BUTTONS -->
-       <div>
-        <h1>EZbuttons</h1>
-    <a href=""><button class="EZbtn-lg">Large</button></a> &nbsp;
-    <a href=""><button>Default</button></a> &nbsp;
-    <a href=""><button class="EZbtn-sm">Small</button></a> &nbsp;
-    <a href=""><button class="EZbtn-xsm">xSmall</button></a> 
-        <p></p><br>
-        <br>
-    <form>
-     <h1>EZinput buttons</h1>
-     <input type="button" value="Input">
-     <input type="submit">
-     <input type="reset">
+    <form class="group" style="background-color:#dedede">
+        <fieldset>
+            <div class="col col-4-12">
+                <legend>Personal Information</legend>
+          
+                  <label for='firstName'>First Name <span>(Required)</span> </label>
+                  <input type='text' name='firstName' placeholder='John'>
+                  <div class='ez-form-clear'></div>
+
+                  <label for='lastName'>Last Name <span>(Required)</span></label>
+                  <input type='text' name='lastName' placeholder='Doe'>
+            </div>
+           <div class="col col-4-12">
+               <legend>Contact Information</legend>
+                  <label for='email'>Email <span class='ez-form-span-mobile'>*</span> <span class='ez-form-span-desktop'>(Required)</span> </label>
+                  <input type='text' name='email' placeholder='johnDoe@gmail.com'>
+                  <div class='ez-form-clear'></div>
+
+                  <label for='telephone'>Telephone </label>
+                  <input type='text' name='telephone' placeholder='555.554.6786'>
+                  <div class='ez-form-clear'></div>
+
+                  <label for='contact'>Prefered Contact</label>
+                  <input type='radio' name='contact' value='email'>Email
+                  <input type='radio' name='contact' value='phone'>Phone
+                  <div class='ez-form-clear'></div>
+
+                  <label>Reason for Contact </label>
+                  <select class='ez-form-select'>
+                     <option value='selectOne'>Select One</option>
+                     <option value='career'>Career Opportunities</option>
+                     <option value='volunteer'>Volunteer work</option>
+                  </select>
+                  <div class='ez-form-clear'></div>
+            </div>
+            <div class="col col-4-12">
+                <legend>Other Information</legend> 
+                 <label for=interest>I am interested in </label>
+                      <input type='checkbox' name='interest'>HTML
+                      <input type='checkbox' name='interest'>CSS
+                      <input type='checkbox' name='interest'>javaScript
+                      <input type='checkbox' name='interest'>jQuery
+                  <div class='ez-form-clear'></div>
+                  <label for='comments'>Comments</label>
+                  <textarea placeholder='Thank you for visiting our site'></textarea>
+
+                  <input type='submit' value='Submit'>
+            </div>
+            
+            
+        </fieldset>
     </form>
-        <br>
-    </div>
-    <div id="rollover">	
-			<ul>
-               <li><h1>Rollover Zoom</h1></li>
-            	<li><img src="images/child-ipad.png" class="zoom" alt=""><figcaption>EZcaption</figcaption></li>
-            </ul> 
-</div>
-</div>	
-<!-- LEAH END -->
+</section>
+<section>
+    <div>
+    <p>Fontawesome accessibility use</p>
+    <!--Font Awesome CDN's auto accessibility feature will try to apply a fallback alternative for the icon based on any any alternatives and configuration you set on the icon.-->
+          <input type="search">
+           <!--DECORATIVE purpose-->
+            <button type="submit">
+                <i class="fa fa-arrow-right" title="Submit My Tax Return"></i>
+                </button>
+                <!--SEMANTIC/INTERACTIVE purpose-->
+                <button type="submit">
+                    <i class="fa fa-envelope"></i> Email Us!
+                </button>
+                        <!--EXAMPLE Fontawesome JS-->
+                      <button type="submit">
+                      <i class="fa fa-arrow-right" title="Submit My Tax Return"></i>
+                      <span class="sr-only">Submit My Tax Return</span>
+                    </button>
+                    <button type="submit">
+                      <i class="fa fa-envelope" aria-hidden=”true”></i> Email Us!
+                    </button>
+                  </div>
+</section>    
+<hr>      
+<footer style="background-color:#dedede"><h4>Footer</h4>
+</footer>
 
-<!-- ESTELA -->	
-				<!--/// ZOOM by ID  (HTML) ///-->	
-	<a class="zoomBtn plus"> + </a> 
-	 &nbsp
-	<a class="zoomBtn"> - </a> 
-	<div id="zoomThis">
-        Quis autem vel eum iure rNeque porro quisquam est, qui dolorem ipsum quia dolor sit amet, consectetur, adipisci velit, sed quia non numquam eius modi tempora incidunt ut labore et dolore magnam aliquam quaerat voluptatem. 
-    </div>
-	<hr>
-	<div>
-		Ut enim ad minima veniam, quis nostrum exercitationem ullam corporis suscipit laboriosameprehenderit qui in ea voluptate velit esse quam nihil molestiae consequatur, vel illum qui dolorem eum fugiat quo voluptas nulla pariatur?"
-	</div>
-    <hr>
-	<div>
-		Labore et dolore magnam aliquam quaerat voluptatem. Tea voluptate velit esse quam nihil molestiae consequatur.
-	</div>
-					<!-- ZOOM by ID END -->
-	
-					<!-- POP-UP HELP on HOVER (HTML)-->
-<div id="container">
-    <h1>Title goes here</h1>
-    <p>
-      Nemo enim ipsam voluptatem quia voluptas sit aspernatur aut odit aut fugit, sed quia.
-      <a href="#" id="trigger">HereGoesYourLink</a>.
-    </p>
-
-    <!-- POP-UP window -->
-    <div id="pop-up">
-      <h3>Pop-up Help</h3>
-      <p>
-        Quis autem vel eum iure rNeque porro quisquam est, qui dolorem ipsum quia dolor sit amet, consectetur. Ut enim ad minima veniam, quis nostrum exercitationem ullam corporis suscipit laboriosameprehenderit qui in ea.
-      </p>
-    </div>
- </div>
-	<br><br>
-					<!-- POP-UP HELP on HOVER (HTML) END-->
-<!-- ESTELA END -->
-	
-	
-<!-- JQUERY CODE/LINKS -->
-	<script type="text/javascript" src="/js/jquery-3.2.1.min.js"></script>
-	<script type="text/javascript" src="/js/zoomID.js"></script>
-	<script type="text/javascript" src="/js/popUpHelpOnHover.js"></script>
-	<script type="text/javascript" src="js/navBar.js"></script>
+        
 </body>
 </html>
