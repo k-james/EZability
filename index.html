@@ -3,7 +3,8 @@
 <head>
     <meta charset="UTF-8">
     <title>EZability</title>
-    <link rel="stylesheet" type="text/css" href="/css/nav.css">
+    <!-- CSS LINKS -->
+    <link rel="stylesheet" type="text/css" href="/css/navbar.css">
     <link rel="stylesheet" type="text/css" href="/css/breadcrumb.css">
 	<link rel="stylesheet" type="text/css" href="/css/EZstyles.css">
 	<link rel="stylesheet" type="text/css" href="/css/buttons.css">
@@ -12,26 +13,28 @@
 	<link rel="stylesheet" type="text/css" href="/css/zoomID.css">
 	<link rel="stylesheet" type="text/css" href="/css/popUpHelpOnHover.css">
 	<link rel="stylesheet" type="text/css" href="/css/styles.css">
+	<!-- JAVASCRIPT LINKS -->
 	<script src="https://use.fontawesome.com/b451a1c7e2.js"></script>
-	
+	<script src="js/navBar.js"></script>
 
 </head>
 <body>
     <!-- START NAV MENU -->
     <nav class="nav-menu" id="nav-component">
         <ul>
-            <li><a href="#">Home</a></li>
-            <li><a href="#" class="active">About Us</a></li>
-            <li><a href="#">Support</a></li>
-            <li><a href="#">Contact Us</a></li>
-            <li class="dropdown-li right"><a href="" class="dropdown">Dropdown</a>
-                           <div class="dropdown-menu">
-                               <a href="">Sub-Menu 1</a>
-                               <a href="">Sub-Menu 2</a>
-                               <a href="">Sub-Menu 3</a>
-                           </div>
-            </li>
-            <li><a href="#" class="menu-icon">&#9776;</a></li>
+          <li><a href="#home">Home</a></li>
+          <li><a href="#about" class="active">About Us</a></li>
+          <li><a href="#support">Support</a></li>
+          <li><a href="#contact">Contact Us</a></li>
+          <li class="dropdown-menu">
+            <a href="#" class="dropbtn">Dropdown</a>
+            <div class="dropdown-content">
+              <a href="#">Link 1</a>
+              <a href="#">Link 2</a>
+              <a href="#">Link 3</a>
+            </div>
+          </li>
+          <a href="#" class="menu-icon">&#9776;</a>
         </ul>
     </nav>
     <!-- END NAV MENU -->
