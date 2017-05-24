@@ -13,12 +13,13 @@
 	<link rel="stylesheet" type="text/css" href="/css/zoomID.css">
 	<link rel="stylesheet" type="text/css" href="/css/popUpHelpOnHover.css">
 	<link rel="stylesheet" type="text/css" href="/css/styles.css">
+	<link rel="stylesheet" type="text/css" href="/css/ezaccordion-plugin.css">
 	<!-- JAVASCRIPT LINKS -->
 	<script src="https://use.fontawesome.com/b451a1c7e2.js"></script>
-	<script src="js/navBar.js"></script>
 
 </head>
 <body>
+   <h1>Nav Bar Example:</h1>
     <!-- START NAV MENU -->
     <nav class="nav-menu" id="nav-component">
         <ul>
@@ -40,6 +41,7 @@
     <!-- END NAV MENU -->
    
    <br>
+   <h1>Breadcrumb Example:</h1>
     <!-- START BREADCRUMB -->
     <ul id="breadcrumbs">
       <li>
@@ -62,38 +64,30 @@
       </li>
     </ul>
     <!-- END BREADCRUMB -->
-	
-	<!-- JQUERY CODE/LINKS -->	
-	<script type="text/javascript" src="/js/zoomID.js"></script>
-	<script type="text/javascript" src="/js/popUpHelpOnHover.js"></script>
-	
-    <!-- SCRIPT FOR RESPONSIVE MOBILE MENU -->
-<!--
-    <script>
-        var menu = document.getElementById("nav-component");
-        
-        function responsiveMenu() {
-            if (menu.className === "nav-menu") {
-                menu.className += " responsive";
-            } else {
-                menu.className = "nav-menu";
-            }
-        }
-        menu.addEventListener("click", responsiveMenu);
-    </script>
--->
-    <!-- END SCRIPT FOR RESPONSIVE MOBILE MENU -->	
+    
+    <br>
+    
+    <h1>Accordion Example:</h1>
+    <!-- START ACCORDION PLUGIN -->
+    <section id="accordion">
+        <button class="collapsible">Section 1</button>
+        <div class="panel">
+          <p>Lorem ipsum dolor sit amet, consectetur adipisicing elit, sed do eiusmod tempor incididunt ut labore et dolore magna aliqua. Ut enim ad minim veniam, quis nostrud exercitation ullamco laboris nisi ut aliquip ex ea commodo consequat.</p>
+        </div>
+
+        <button class="collapsible">Section 2</button>
+        <div class="panel">
+          <p>Lorem ipsum dolor sit amet, consectetur adipisicing elit, sed do eiusmod tempor incididunt ut labore et dolore magna aliqua. Ut enim ad minim veniam, quis nostrud exercitation ullamco laboris nisi ut aliquip ex ea commodo consequat.</p>
+        </div>
+
+        <button class="collapsible">Section 3</button>
+        <div class="panel">
+          <p>Lorem ipsum dolor sit amet, consectetur adipisicing elit, sed do eiusmod tempor incididunt ut labore et dolore magna aliqua. Ut enim ad minim veniam, quis nostrud exercitation ullamco laboris nisi ut aliquip ex ea commodo consequat.</p>
+        </div>
+    </section>
+    <!-- END ACCORDION PLUGIN -->
 	
 <!-- LEAH -->
- <div id="EZaccordion"><a href="#menu" class="menu">Accordion Menu</a><br><i class="down"></i>
-        <div id="EZaccordion-hidden">
-            <a href="index.html">Home</a>
-            <a href="nav1.html">Nav1</a>
-            <a href="nav2.html">Nav2</a>
-            <a href="nav3.html">Nav3</a>
-            <a href="nav4.html">Nav4</a>
-        </div>
-    </div>
     <!-- IMAGE SLIDER --> 
     <h1>EZslider</h1>   
 <div class=carousel>
@@ -143,9 +137,10 @@
 <!-- LEAH END -->
 
 <!-- ESTELA -->	
-				<!--/// ZOOM by ID  (HTML) ///-->	
+    <!--/// ZOOM by ID  (HTML) ///-->
+    <h1>Zoom Text Example:</h1>	
 	<a class="zoomBtn plus"> + </a> 
-	 &nbsp
+	 &nbsp;
 	<a class="zoomBtn"> - </a> 
 	<div id="zoomThis">
         Quis autem vel eum iure rNeque porro quisquam est, qui dolorem ipsum quia dolor sit amet, consectetur, adipisci velit, sed quia non numquam eius modi tempora incidunt ut labore et dolore magnam aliquam quaerat voluptatem. 
@@ -158,26 +153,27 @@
 	<div>
 		Labore et dolore magnam aliquam quaerat voluptatem. Tea voluptate velit esse quam nihil molestiae consequatur.
 	</div>
-					<!-- ZOOM by ID END -->
+	<!-- ZOOM by ID END -->
 	
-					<!-- POP-UP HELP on HOVER (HTML)-->
-<div id="container">
-    <h1>Title goes here</h1>
-    <p>
-      Nemo enim ipsam voluptatem quia voluptas sit aspernatur aut odit aut fugit, sed quia.
-      <a href="#" id="trigger">HereGoesYourLink</a>.
-    </p>
+	<!-- POP-UP HELP on HOVER (HTML)-->
+   <h1>Tool Tip Example:</h1>
+    <div id="container">
+        <h1>Title goes here</h1>
+        <p>
+          Nemo enim ipsam voluptatem quia voluptas sit aspernatur aut odit aut fugit, sed quia.
+          <a href="#" id="trigger">HereGoesYourLink</a>.
+        </p>
 
-    <!-- POP-UP window -->
-    <div id="pop-up">
-      <h3>Pop-up Help</h3>
-      <p>
-        Quis autem vel eum iure rNeque porro quisquam est, qui dolorem ipsum quia dolor sit amet, consectetur. Ut enim ad minima veniam, quis nostrum exercitationem ullam corporis suscipit laboriosameprehenderit qui in ea.
-      </p>
-    </div>
- </div>
+        <!-- POP-UP window -->
+        <div id="pop-up">
+          <h3>Pop-up Help</h3>
+          <p>
+            Quis autem vel eum iure rNeque porro quisquam est, qui dolorem ipsum quia dolor sit amet, consectetur. Ut enim ad minima veniam, quis nostrum exercitationem ullam corporis suscipit laboriosameprehenderit qui in ea.
+          </p>
+        </div>
+     </div>
 	<br><br>
-					<!-- POP-UP HELP on HOVER (HTML) END-->
+	<!-- POP-UP HELP on HOVER (HTML) END-->
 <!-- ESTELA END -->
 
 <!--  H1 to H3  &  some kind of FORM -->
@@ -284,131 +280,15 @@
 </section>    
 <hr>      
 <!--  H1 to H3  &  some kind of FORM  END -->	
-	
-<!-- ESTELA -->	
-				<!--/// ZOOM by ID  (HTML) ///-->	
-	<a class="zoomBtn plus"> + </a> 
-	 &nbsp
-	<a class="zoomBtn"> - </a> 
-	<div id="zoomThis">
-        Quis autem vel eum iure rNeque porro quisquam est, qui dolorem ipsum quia dolor sit amet, consectetur, adipisci velit, sed quia non numquam eius modi tempora incidunt ut labore et dolore magnam aliquam quaerat voluptatem. 
-    </div>
-	<hr>
-	<div>
-		Ut enim ad minima veniam, quis nostrum exercitationem ullam corporis suscipit laboriosameprehenderit qui in ea voluptate velit esse quam nihil molestiae consequatur, vel illum qui dolorem eum fugiat quo voluptas nulla pariatur?"
-	</div>
-    <hr>
-	<div>
-		Labore et dolore magnam aliquam quaerat voluptatem. Tea voluptate velit esse quam nihil molestiae consequatur.
-	</div>
-					<!-- ZOOM by ID END -->
-	
-					<!-- POP-UP HELP on HOVER (HTML)-->
-<div id="container">
-    <h1>Title goes here</h1>
-    <p>
-      Nemo enim ipsam voluptatem quia voluptas sit aspernatur aut odit aut fugit, sed quia.
-      <a href="#" id="trigger">HereGoesYourLink</a>.
-    </p>
 
-    <!-- POP-UP window -->
-    <div id="pop-up">
-      <h3>Pop-up Help</h3>
-      <p>
-        Quis autem vel eum iure rNeque porro quisquam est, qui dolorem ipsum quia dolor sit amet, consectetur. Ut enim ad minima veniam, quis nostrum exercitationem ullam corporis suscipit laboriosameprehenderit qui in ea.
-      </p>
-    </div>
- </div>
-	<br><br>
-					<!-- POP-UP HELP on HOVER (HTML) END-->
-<!-- ESTELA END -->
-	
-<!--  H1 to H3  &  some kind of FORM --->
-<section>
-    <div class="col col-6-12" style="background-color:#dedede">
-       <h1>h1</h1>
-        <p><small>SMALL p col col-6-12</small> Lorem ipsum dolor sit amet, consectetur adipisicing elit. Pariatur voluptas odio laudantium. Cumque aspernatur nesciunt minima quaerat, culpa. Temporibus est labore voluptatem commodi alias provident officia impedit et repellat modi?</p>
-    </div>
-     <div class="col col-6-12" style="background-color:#dedede">
-        <h2>h2</h2>
-         <p><strong>STRONG p col col-6-12  </strong>Lorem ipsum dolor sit amet, consectetur adipisicing elit. Nisi saepe pariatur nulla eaque nemo, delectus nostrum id nam accusantium similique distinctio praesentium numquam sapiente nobis repellendus quia iste, possimus doloremque.</p>
-     </div>
-</section>
-<section>
-    <div class="col col-4-12" style="background-color:#dedede">
-       <h3>h3</h3>
-		<blockquote>BLOCKQUOTE Lorem ipsum dolor sit amet,</blockquote><p>consectetur adipisicing elit. Quidem architecto doloremque non sit.Animi nostrum asperiores accusamus amet consequuntur, velit consequatur repellat facere vitae earum cumque quasi dolore facilis sequi.</p>
-    </div>
-    <div class="col col-4-12" style="background-color:#dedede">
-        <h3>h3</h3>
-        <p class="grow">Lorem ipsum dolor sit amet, consectetur adipisicing elit. Quidem architecto doloremque non sit. Animi nostrum asperiores accusamus amet consequuntur, velit consequatur repellat facere vitae earum cumque quasi dolore facilis sequi.</p>
-    </div>
-    <div class="col col-4-12" style="background-color:#dedede">
-        <h3>h3</h3>
-        <p>Lorem ipsum dolor sit amet, consectetur adipisicing elit. Quidem architecto doloremque non sit. Animi nostrum asperiores accusamus amet consequuntur, velit consequatur repellat facere vitae earum cumque quasi dolore facilis sequi.</p>
-    </div>
-</section>
-<section>
-   <!--      <div class='ez-form-info'>Required fileds are marked with an asterisk (*)</div>    -->
-
-    <form class="group" style="background-color:#dedede">
-        <fieldset>
-            <div class="col col-4-12">
-                <legend>Personal Information</legend>
-          
-                  <label for='firstName'>First Name <span>(Required)</span> </label>
-                  <input type='text' name='firstName' placeholder='John'>
-                  <div class='ez-form-clear'></div>
-
-                  <label for='lastName'>Last Name <span>(Required)</span></label>
-                  <input type='text' name='lastName' placeholder='Doe'>
-            </div>
-           <div class="col col-4-12">
-               <legend>Contact Information</legend>
-                  <label for='email'>Email <span class='ez-form-span-mobile'>*</span> <span class='ez-form-span-desktop'>(Required)</span> </label>
-                  <input type='text' name='email' placeholder='johnDoe@gmail.com'>
-                  <div class='ez-form-clear'></div>
-
-                  <label for='telephone'>Telephone </label>
-                  <input type='text' name='telephone' placeholder='555.554.6786'>
-                  <div class='ez-form-clear'></div>
-
-                  <label for='contact'>Prefered Contact</label>
-                  <input type='radio' name='contact' value='email'>Email
-                  <input type='radio' name='contact' value='phone'>Phone
-                  <div class='ez-form-clear'></div>
-
-                  <label>Reason for Contact </label>
-                  <select class='ez-form-select'>
-                     <option value='selectOne'>Select One</option>
-                     <option value='career'>Career Opportunities</option>
-                     <option value='volunteer'>Volunteer work</option>
-                  </select>
-                  <div class='ez-form-clear'></div>
-            </div>
-            <div class="col col-4-12">
-                <legend>Other Information</legend> 
-                 <label for=interest>I am interested in </label>
-                      <input type='checkbox' name='interest'>HTML
-                      <input type='checkbox' name='interest'>CSS
-                      <input type='checkbox' name='interest'>javaScript
-                      <input type='checkbox' name='interest'>jQuery
-                  <div class='ez-form-clear'></div>
-                  <label for='comments'>Comments</label>
-                  <textarea placeholder='Thank you for visiting our site'></textarea>
-
-                  <input type='submit' value='Submit'>
-            </div>    
-        </fieldset>
-    </form>
-</section>    
-<hr>      
-<!--  H1 to H3  &  some kind of FORM  END --->
-	
 <!-- JQUERY CODE/LINKS -->
 	<script type="text/javascript" src="/js/jquery-3.2.1.min.js"></script>
 	<script type="text/javascript" src="/js/zoomID.js"></script>
 	<script type="text/javascript" src="/js/popUpHelpOnHover.js"></script>
 	<script type="text/javascript" src="js/navBar.js"></script>
+    <script src="ezaccordion-plugin.js"></script>
+    <!-- SCRIPT TO INITIALIZE ACCORDION PLUGIN -->
+    <script>$("#accordion").accordionPlugin();</script>
+    <!-- END SCRIPT TO INITIALIZE ACCORDION PLUGIN -->
 </body>
 </html>
