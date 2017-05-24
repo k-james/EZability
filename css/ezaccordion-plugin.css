@@ -1,4 +1,9 @@
-#accordion button.collapsible {
+#accordion {
+    width: 95%;
+    font-family: sans-serif;
+}
+
+#accordion section.collapsible {
     background-color: #DDD;
     color: #444;
     cursor: pointer;
@@ -11,11 +16,11 @@
     transition: 0.4s;
 }
 
-#accordion button.collapsible.active, #accordion .collapsible:hover {
+#accordion section.collapsible.active, #accordion section.collapsible:hover {
     background-color: #EEE;
 }
 
-#accordion button.collapsible:after {
+#accordion section.collapsible:after {
     content: '\002B';
     color: #777;
     font-weight: bold;
@@ -23,7 +28,7 @@
     margin-left: 5px;
 }
 
-#accordion button.collapsible.active:after {
+#accordion section.collapsible.active:after {
     content: "\2212";
 }
 

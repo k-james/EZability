@@ -15,6 +15,7 @@
 	<link rel="stylesheet" type="text/css" href="/css/ezaccordion-plugin.css">
 	<!-- JAVASCRIPT LINKS -->
 	<script src="https://use.fontawesome.com/b451a1c7e2.js"></script>
+    <script src="js/ezaccordion-plugin.js"></script>
 
 </head>
 <body>
@@ -69,17 +70,17 @@
     <h1>Accordion Example:</h1>
     <!-- START ACCORDION PLUGIN -->
     <section id="accordion">
-        <button class="collapsible">Section 1</button>
+        <section class="collapsible">Section 1</section>
         <div class="panel">
           <p>Lorem ipsum dolor sit amet, consectetur adipisicing elit, sed do eiusmod tempor incididunt ut labore et dolore magna aliqua. Ut enim ad minim veniam, quis nostrud exercitation ullamco laboris nisi ut aliquip ex ea commodo consequat.</p>
         </div>
 
-        <button class="collapsible">Section 2</button>
+        <section class="collapsible">Section 2</section>
         <div class="panel">
           <p>Lorem ipsum dolor sit amet, consectetur adipisicing elit, sed do eiusmod tempor incididunt ut labore et dolore magna aliqua. Ut enim ad minim veniam, quis nostrud exercitation ullamco laboris nisi ut aliquip ex ea commodo consequat.</p>
         </div>
 
-        <button class="collapsible">Section 3</button>
+        <section class="collapsible">Section 3</section>
         <div class="panel">
           <p>Lorem ipsum dolor sit amet, consectetur adipisicing elit, sed do eiusmod tempor incididunt ut labore et dolore magna aliqua. Ut enim ad minim veniam, quis nostrud exercitation ullamco laboris nisi ut aliquip ex ea commodo consequat.</p>
         </div>
@@ -284,10 +285,14 @@
 	<script type="text/javascript" src="/js/jquery-3.2.1.min.js"></script>
 	<script type="text/javascript" src="/js/zoomID.js"></script>
 	<script type="text/javascript" src="/js/popUpHelpOnHover.js"></script>
-	<script type="text/javascript" src="js/navBar.js"></script>
-    <script src="ezaccordion-plugin.js"></script>
+	<script type="text/javascript" src="/js/navBar.js"></script>
+   
     <!-- SCRIPT TO INITIALIZE ACCORDION PLUGIN -->
-    <script>$("#accordion").accordionPlugin();</script>
+    <script>
+        $(function () {
+            $("#accordion").accordionPlugin();
+        })
+    </script>
     <!-- END SCRIPT TO INITIALIZE ACCORDION PLUGIN -->
 </body>
 </html>
