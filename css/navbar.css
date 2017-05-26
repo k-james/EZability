@@ -33,6 +33,24 @@
     background-color: #575755;
 }
 
+/* START OF STICKY NAV */
+
+.fixed {
+    position:fixed;
+    top:0;
+    left: 0;
+    z-index:1000000;
+    width:100%;
+    background-color:transparent;
+}
+.fixed .nav-inner {
+    max-width: 700px;
+    margin: 0 auto;
+    background-color: #3B3F45;
+}
+
+/* END OF STICKY NAV */
+
 /* MENU ICON */
 .nav-menu .menu-icon {
   display: none;
