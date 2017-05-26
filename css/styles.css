@@ -1,4 +1,5 @@
 
+
 /*BODY*/
 
 
@@ -16,23 +17,19 @@ body{
     background-color:#fff;
     line-height: 1.7rem;
 }
+body, 
+select, 
+input, 
+textarea {color: #333;}
 
 /*   --- HELPER CLASSES: ----*/
 /*.hide/display:none class makes content "inaccessible" by screen readers. Hide class should position the content off screen, which still leaves it screen reader accessible */
 
 /*hides elements visually, but keep them available for screen-readers.*/
-.invisible {
+.hide {
    position: absolute !important;
    top: -9999px !important;
    left: -9999px !important;
-}
-/*OR / ALTERNATIVE TO .invisible */
-.element-invisible {
-  position: absolute !important;
-  height: 1px;
-  width: 1px;
-  overflow: hidden;
-  clip: rect(1px 1px 1px 1px);
 }
 
 /*elements which should not be immediately displayed to any user.*/
@@ -40,18 +37,7 @@ body{
    display: none !important;
 }
 
-/*extends the .element-invisible class to allow the element to be focusable when navigated to via the keyboard. OR// .invisible */
-.element-invisible.element-focusable:active,
-.element-invisible.element-focusable:focus 
-{
-  position: static; 
-  clip: auto; 
-  height: inherit !important; 
-  width: inherit !important; 
-  overflow: inherit !important;
-}
-
-
+*:focus { outline: none; }
 
 /*    GROW on hover     */
 .grow { transition: all .2s ease-in-out; }
@@ -66,7 +52,27 @@ a[href], input[type='submit'],input[type='reset'], input[type='image'], label[fo
 aria-describedby{}
 
 /*appropriate alternative text. FOR Contextual/Validation classes*/
-.sr-only{}
+/*Hides an element to all devices except screen readers*/
+.sr-only {
+  position: absolute;
+  width: 1px;
+  height: 1px;
+  padding: 0;
+  margin: -1px;
+  overflow: hidden;
+  clip: rect(0,0,0,0);
+  border: 0;
+}
+
+/*Combine with .sr-only to show the element again when it is focused (e.g. by a keyboard-only user)*/
+.sr-only-focusable, :focus.sr-only{
+  width: auto;
+  height: auto;
+  margin: 0;
+  overflow: auto;
+  clip: auto;
+}
+
 
 h1, 
 h2, 
@@ -103,12 +109,16 @@ hr {
 }
 
 a {
-  background-color: transparent;  
-}
+    background-color: transparent;  
+    color: #2273AA;}
+
+a:hover {
+    color: #15486A;}
+
 
 
 abbr[title] {
-  border-bottom: 1px dotted #777; 
+  border-bottom: 1px dotted #E74E4E; 
   cursor: help; 
 }
 
@@ -163,6 +173,7 @@ q:after,
 blockquote:after {
     top: 0;
     right: 0;
+    font-family: "FontAwesome";
     content: "\201D";
 }
 
@@ -250,30 +261,29 @@ dd {
 .text-capitalized{text-transform: capitalize;}
 /* ----------- VALIDATION/CONTEXTUAL CLASSES -----*/
 /*Applies the hover color to a particular row or cell*/
-.active{}
+.active{color:}
 /*Indicates a neutral informative change or action*/
-.info
+.info{color:#2273AA;}
 /*Indicates a successful or positive action*/
-.success{}
+.success{color:#2DAA32;}
 /*Indicates a warning that might need attention*/
-.warning{}
+.warning{color:#F6F525;}
 /*Indicates a dangerous or potentially negative action*/
-.danger{}
+.danger{color: #B73837;}
 
-.text-info{color:;}
-a.text-info{color:;}
+.text-info{color:#15486A;}
+a.text-info{color:#15486A;}
 a.text-info:hover,
-a.text-info:focus{color:#245269;}
-.bg-info{color:#fff; background-color:#337ab7;}
-a.bg-info:hover,
-a.bg-info:focus {
-  background-color: #286090;
-}
+a.text-info:focus{color:#15486A;}
 
 
-.btn-info{}
-.label-info{}
-.alert{}
+.btn-info{color: #dedede; background-color:#2273AA;}
+.btn-success{color: #dedede;background-color:#2DAA32;}
+.btn-warning{color: #dedede;background-color:#F6F525;}
+.btn-danger{color: #dedede;background-color:#B73837;}
+.alert{
+    background-color: #B73837;
+    color:#fff;}
 
 /* -------- MEDIA -------*/
 /*********************    START OF RESPONSIVE IMAGES STYLES    **********************/
@@ -306,8 +316,8 @@ caption{
 
 
 /* --------- GRID ----------*/
-/*hidden Removes an item from the page, without affecting page flow or causing scrollbars. Much better than display: none; or even visibility: hidden*/
-[hidden]{
+/*hide Removes an item from the page, without affecting page flow or causing scrollbars. Much better than display: none; or even visibility: hidden*/
+[hide]{
     position: absolute;
     top:-9999px;
     left:-9999px;
@@ -383,17 +393,6 @@ section {
 }
 
 
-/*  GO FULL WIDTH BELOW 480 PIXELS @media queries as soon as the screen size gets less than 480 pixels the columns stack and the margins disappear.*/
-@media only screen and (max-width: 480px) {
-	.col {  margin: 1% 0 1% 0%; }
-    
-    .col-1-12, .col-2-12, .col-3-12, .col-4-12, .col-5-12, .col-6-12, .col-7-12, .col-8-12, .col-9-12, .col-10-12, .col-11-12, .col-12-12 {
-	width: 100%; 
-	}
-}
-@media (min-width: 768px){}
-@media (min-width: 992px){}
-@media (min-width: 1200px){}
 
 
 
@@ -435,7 +434,7 @@ section {
     padding:1em;
 }
 
-/*     End of bordered table     */
+/*     End of bordered table -moved to bottom     */
 
 
 /*     Start of Responsive table     */
@@ -470,43 +469,9 @@ section {
     text-transform: uppercase;
     letter-spacing: 1px;
 }
-@media screen and (max-width: 600px) {
-    .ez-responsive{
-        border: 0;
-        box-shadow: 0px 0px 0px rgba(0, 0, 0, 0.13);
-        -webkit-box-shadow: 0px 0px 0px rgba(0, 0, 0, 0.13);
-        -moz-box-shadow: 0px 0px 0px rgba(0, 0, 0, 0.13);
-    }
-    .ez-responsive thead {
-        display: none;
-    }
-    .ez-responsive tr {
-        margin-bottom: 15px;
-        display:block;
-        border-bottom: 1px solid #ddd;
-        box-shadow: 5px 5px 10px rgba(0, 0, 0, 0.13);
-        -webkit-box-shadow: 5px 5px 10px rgba(0, 0, 0, 0.13);
-        -moz-box-shadow: 5px 5px 10px rgba(0, 0, 0, 0.13);
-    }
-    .ez-responsive td {
-        display:block;
-        text-align:right;
-        font-size: 15px;
-        border-bottom: 2px dotted #ccc;
-    }
-    .ez-responsive td:last-child {
-        border-bottom: 0;
-    }
-    .ez-responsive td:before {
-        content: attr(data-label);
-        float:left;
-        text-transform: uppercase;
-        font: bold 1.2em 'Abril Fatface', 'verdana', 'arial';
-    }
-}
 
 
-/*     End of Responsive table     */
+/*     End of Responsive table -moved to bottom    */
 
 
 /*     Start of Striped table     */
@@ -635,102 +600,11 @@ section {
     margin:5px auto;
 }
     
-@media only screen and (min-width: 450px) {
-    
-}
 
-@media only screen and (min-width: 960px) {
-    .ez-form {
-        max-width:900px;
-        margin: 10px auto;
-    }
-    .ez-form h1 {
-        padding:20px 30px 15px 30px;
-        font-size:3em;
-    }
-    .ez-form h1 span {
-        display:block;
-        font-size:.5em;
-        font-family: 'Verdana', 'sans-serif';
-    }
-    .ez-form fieldset {
-        margin:15px;
-        padding: 30px;
-    }
-    .ez-form fieldset legend { font-size: 2em }
-    .ez-form label {
-        float:left;
-        width: 200px;
-        margin: 10px 10px;
-        text-align:right;
-        clear:left;
-    }
-    .ez-form label span {
-        display:block;
-        font-size:.75em;
-    }
-    .ez-form-span-mobile {
-        display:none;
-    }
-    .ez-form-span-desktop {
-        display:none;
-    }
-    .ez-form input[type='text'], .ez-form input[type='submit'], .ez-form textarea, .ez-form select {
-        width: 300px;
-        height: 35px;
-        margin: 10px 10px;
-    }
-    .ez-form input[type='submit'] { margin-left: 220px }
-    
-    .ez-form textarea { height: 100px }
-
-    .ez-form input[type='radio'], .ez-form input[type='checkbox'] {
-        height: 15px;
-        width: 15px;
-        margin: 10px 10px;
-    }
-    .ez-form select {
-        margin: 10px 10px;
-    }
-    .ez-form-clear {
-        clear:both;
-    }
-    
-}
 
 /*********************    END OF FORM STYLES    **********************/
 
 
-fieldset{
-    border:0; 
-    padding:0.35 0.75em 0.625em; margin:0;}
-
-button, 
-input, 
-optgroup, 
-select, 
-textarea {
-    font-size: 100%; 
-    line-height: 1.15; 
-    margin:0;}
-
-label{
-    display:block;
-}
-
-[type="checkbox"],
-[type="radio"] {
-  box-sizing: border-box;   
-}
-
-[type="search"] {
-  -webkit-appearance: textfield;
-    outline-offset: -2px;
-    border-radius: 15px;
-    height:1.6em;
-    letter-spacing:1px;
-    word-spacing: 2px;
-}
 
 input[type="search"]::-webkit-search-cancel-button {
   /* Remove default 
@@ -800,20 +674,118 @@ pre code {
   border-radius: 0;
 }
 
-var{}
+
 
 /* --------- BREAKPOINTS ----------*/
+/*  GO FULL WIDTH BELOW 480 PIXELS @media queries as soon as the screen size gets less than 480 pixels the columns stack and the margins disappear.*/
+@media only screen and (max-width: 480px) {
+	.col {  margin: 1% 0 1% 0%; }
+    
+    .col-1-12, .col-2-12, .col-3-12, .col-4-12, .col-5-12, .col-6-12, .col-7-12, .col-8-12, .col-9-12, .col-10-12, .col-11-12, .col-12-12 {
+	width: 100%; 
+	}
+}
 
 @media only screen and (device-width: 768px) {
   /* For general iPad layouts */
+    .ez-responsive{
+        border: 0;
+        box-shadow: 0px 0px 0px rgba(0, 0, 0, 0.13);
+        -webkit-box-shadow: 0px 0px 0px rgba(0, 0, 0, 0.13);
+        -moz-box-shadow: 0px 0px 0px rgba(0, 0, 0, 0.13);
+    }
+    .ez-responsive thead {
+        display: none;
+    }
+    .ez-responsive tr {
+        margin-bottom: 15px;
+        display:block;
+        border-bottom: 1px solid #ddd;
+        box-shadow: 5px 5px 10px rgba(0, 0, 0, 0.13);
+        -webkit-box-shadow: 5px 5px 10px rgba(0, 0, 0, 0.13);
+        -moz-box-shadow: 5px 5px 10px rgba(0, 0, 0, 0.13);
+    }
+    .ez-responsive td {
+        display:block;
+        text-align:right;
+        font-size: 15px;
+        border-bottom: 2px dotted #ccc;
+    }
+    .ez-responsive td:last-child {
+        border-bottom: 0;
+    }
+    .ez-responsive td:before {
+        content: attr(data-label);
+        float:left;
+        text-transform: uppercase;
+        font: bold 1.2em 'Abril Fatface', 'verdana', 'arial';
+    }
+
 }
 
-@media only screen and (min-device-width: 481px) and (max-device-width: 1024px) and (orientation:portrait) {
+@media only screen and (min-device-width: 481px) and (max-device-width: 992px) and (orientation:portrait) {
   /* For portrait layouts only */
 }
 
-@media only screen and (min-device-width: 481px) and (max-device-width: 1024px) and (orientation:landscape) {
+@media only screen and (min-device-width: 481px) and (max-device-width: 1200px) and (orientation:landscape) {
   /* For landscape layouts only */
+    .ez-form {
+        max-width:1200px;
+        margin: 10px auto;
+    }
+    .ez-form h1 {
+        padding:20px 30px 15px 30px;
+        font-size:3em;
+    }
+    .ez-form h1 span {
+        display:block;
+        font-size:.5em;
+        font-family: 'Verdana', 'sans-serif';
+    }
+    .ez-form fieldset {
+        margin:15px;
+        padding: 30px;
+    }
+    .ez-form fieldset legend { font-size: 2em }
+    .ez-form label {
+        float:left;
+        width: 200px;
+        margin: 10px 10px;
+        text-align:right;
+        clear:left;
+    }
+    .ez-form label span {
+        display:block;
+        font-size:.75em;
+    }
+    .ez-form-span-mobile {
+        display:none;
+    }
+    .ez-form-span-desktop {
+        display:none;
+    }
+    .ez-form input[type='text'], .ez-form input[type='submit'], .ez-form textarea, .ez-form select {
+        width: 300px;
+        height: 35px;
+        margin: 10px 10px;
+    }
+    .ez-form input[type='submit'] { margin-left: 220px }
+    
+    .ez-form textarea { height: 100px }
+
+    .ez-form input[type='radio'], .ez-form input[type='checkbox'] {
+        height: 15px;
+        width: 15px;
+        margin: 10px 10px;
+    }
+    .ez-form select {
+        margin: 10px 10px;
+    }
+    .ez-form-clear {
+        clear:both;
+    }
+    
+}
 }
 
 /* ------ NO-PRINT -----------*/
