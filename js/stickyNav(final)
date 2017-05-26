@@ -3,11 +3,12 @@
 $(function () {
     'use strict';
     var navOffset = $('nav').offset().top;
+    
+    $('nav').wrap('<div class="nav-placeholder"></div>');
+    $('.nav-placeholder').height($('nav').outerHeight());
+        
     $(window).scroll(function () {
         var scrollPos = jQuery(window).scrollTop();
-
-        $('nav').wrap('<div class="nav-placeholder"></div>');
-        $('.nav-placeholder').height($('nav').outerHeight());
 
         if (scrollPos >= navOffset) {
             $('nav').addClass('fixed');
