@@ -1,5 +1,7 @@
 
 /*BODY*/
+
+
 html{
     position: relative;
     min-height: 100%;
@@ -14,8 +16,27 @@ body{
     background-color:#fff;
     line-height: 1.7rem;
 }
+body, 
+select, 
+input, 
+textarea {color: #333;}
 
-/*   --- ADDITIONAL CLASSES: ----*/
+/*   --- HELPER CLASSES: ----*/
+/*.hide/display:none class makes content "inaccessible" by screen readers. Hide class should position the content off screen, which still leaves it screen reader accessible */
+
+/*hides elements visually, but keep them available for screen-readers.*/
+.hide {
+   position: absolute !important;
+   top: -9999px !important;
+   left: -9999px !important;
+}
+
+/*elements which should not be immediately displayed to any user.*/
+.remember-this-will-NOT-be-read {
+   display: none !important;
+}
+
+*:focus { outline: none; }
 
 /*    GROW on hover     */
 .grow { transition: all .2s ease-in-out; }
@@ -26,6 +47,31 @@ a[href], input[type='submit'],input[type='reset'], input[type='image'], label[fo
  [type="radio"], .pointer {
        cursor: pointer;
 }
+/*Help text should be explicitly associated with the form control it relates to.This will ensure that assistive technologies – such as screen readers – will announce this help text when the user focuses or enters the control.*/
+aria-describedby{}
+
+/*appropriate alternative text. FOR Contextual/Validation classes*/
+/*Hides an element to all devices except screen readers*/
+.sr-only {
+  position: absolute;
+  width: 1px;
+  height: 1px;
+  padding: 0;
+  margin: -1px;
+  overflow: hidden;
+  clip: rect(0,0,0,0);
+  border: 0;
+}
+
+/*Combine with .sr-only to show the element again when it is focused (e.g. by a keyboard-only user)*/
+.sr-only-focusable, :focus.sr-only{
+  width: auto;
+  height: auto;
+  margin: 0;
+  overflow: auto;
+  clip: auto;
+}
+
 
 h1, 
 h2, 
@@ -33,8 +79,12 @@ h3,
 h4, 
 h5, 
 h6{
-  margin-top: 0;
+  margin-top: 10px;
   margin-bottom: 1rem;
+    color:inherit;
+    font-family: inherit;
+    line-height: 1.1;
+  
 }
 
 h1 {
@@ -47,22 +97,28 @@ h3{
     font-size: 1.4em;
 }
 
+p{margin: 0 0 10px;}
+
 hr {
-  height: 0;
-  overflow: visible;
+    margin-top: 20px;
+    margin-bottom: 20px;
+    border: 0;
+    border-top: 1px solid #eee;
+    overflow-x: visible;
 }
 
 a {
-  background-color: transparent;  
-}
+    background-color: transparent;  
+    color: #2273AA;}
+
+a:hover {
+    color: #15486A;}
+
 
 
 abbr[title] {
-  border-bottom: none;
-  text-decoration: underline;
-  text-decoration: underline dotted; 
+  border-bottom: 1px dotted #E74E4E; 
   cursor: help; 
-  border-bottom: 0; 
 }
 
 article,
@@ -104,30 +160,129 @@ mark {
   color: #000;
 }
 
-blockquote{
-    quotes: "";
-    margin:1.5em 10px;
-    padding:.5em 10px;
-    font-style: italic;
-    font-weight: 400;
-}
 
 q:before, 
 blockquote:before {
     top: 0;
     left: 0;
+    font-family: "FontAwesome";
     content: "\201C";
 }
 q:after, 
 blockquote:after {
     top: 0;
     right: 0;
+    font-family: "FontAwesome";
     content: "\201D";
+}
+
+small, 
+.small{
+    font-size: 85%;
 }
 
 summary {
   display: list-item;
 }
+del{text-decoration: line-through;}
+/*define replaced or deleted text*/
+s{text-decoration: line-through;}
+/*The <ins> tag defines a text that has been inserted into a document.Together with <del> to markup updates and modifications in a document.*/
+ins{text-decoration: underline;}
+u{text-decoration: underline;}
+strong,
+b{font-weight: bold;}
+em, i{font-style: italic;}
+
+/* --------------- LIST --------------*/
+ul,
+ol {
+  margin-top: 0;
+  margin-bottom: 10px;
+}
+ul ul,
+ol ul,
+ul ol,
+ol ol {
+  margin-bottom: 0;
+}
+.list-unstyled {
+  padding-left: 0;
+  list-style: none;
+}
+.list-inline {
+  padding-left: 0;
+  margin-left: -5px;
+  list-style: none;
+}
+.list-inline > li {
+  display: inline-block;
+  padding-right: 5px;
+  padding-left: 5px;
+}
+dl {
+  margin-top: 0;
+  margin-bottom: 20px;
+}
+dt,
+dd {
+  line-height: 1.42857143;
+}
+dt {
+  font-weight: bold;
+}
+dd {
+  margin-left: 0;
+}
+@media (min-width: 768px) {
+  .dl-horizontal dt {
+    float: left;
+    width: 160px;
+    overflow: hidden;
+    clear: left;
+    text-align: right;
+    text-overflow: ellipsis;
+    white-space: nowrap;
+  }
+  .dl-horizontal dd {
+    margin-left: 180px;
+  }
+}
+/* ----------- ALIGNMENT CLASSES ----------*/
+.text-left{text-align: left;}
+.text-right{text-align: right;}
+.text-center{text-align: center;}
+.text-justify{text-align: justify;}
+.text-nowrap{white-space: nowrap;}
+/* ----------- TEXT TRANSFORM CLASSES -----*/
+.text-lowercase{text-transform: lowercase;}
+.text-uppercase{text-transform: uppercase;}
+.text-capitalized{text-transform: capitalize;}
+/* ----------- VALIDATION/CONTEXTUAL CLASSES -----*/
+/*Applies the hover color to a particular row or cell*/
+.active{color:}
+/*Indicates a neutral informative change or action*/
+.info{color:#2273AA;}
+/*Indicates a successful or positive action*/
+.success{color:#2DAA32;}
+/*Indicates a warning that might need attention*/
+.warning{color:#F6F525;}
+/*Indicates a dangerous or potentially negative action*/
+.danger{color: #B73837;}
+
+.text-info{color:#15486A;}
+a.text-info{color:#15486A;}
+a.text-info:hover,
+a.text-info:focus{color:#15486A;}
+
+
+.btn-info{color: #dedede; background-color:#2273AA;}
+.btn-success{color: #dedede;background-color:#2DAA32;}
+.btn-warning{color: #dedede;background-color:#F6F525;}
+.btn-danger{color: #dedede;background-color:#B73837;}
+.alert{
+    background-color: #B73837;
+    color:#fff;}
 
 /* -------- MEDIA -------*/
 /*********************    START OF RESPONSIVE IMAGES STYLES    **********************/
@@ -160,8 +315,8 @@ caption{
 
 
 /* --------- GRID ----------*/
-/*hidden Removes an item from the page, without affecting page flow or causing scrollbars. Much better than display: none; or even visibility: hidden*/
-[hidden]{
+/*hide Removes an item from the page, without affecting page flow or causing scrollbars. Much better than display: none; or even visibility: hidden*/
+[hide]{
     position: absolute;
     top:-9999px;
     left:-9999px;
@@ -237,14 +392,7 @@ section {
 }
 
 
-/*  GO FULL WIDTH BELOW 480 PIXELS @media queries as soon as the screen size gets less than 480 pixels the columns stack and the margins disappear.*/
-@media only screen and (max-width: 480px) {
-	.col {  margin: 1% 0 1% 0%; }
-    
-    .col-1-12, .col-2-12, .col-3-12, .col-4-12, .col-5-12, .col-6-12, .col-7-12, .col-8-12, .col-9-12, .col-10-12, .col-11-12, .col-12-12 {
-	width: 100%; 
-	}
-}
+
 
 
 /*     Start of bordered table     */
@@ -285,7 +433,7 @@ section {
     padding:1em;
 }
 
-/*     End of bordered table     */
+/*     End of bordered table -moved to bottom     */
 
 
 /*     Start of Responsive table     */
@@ -320,43 +468,9 @@ section {
     text-transform: uppercase;
     letter-spacing: 1px;
 }
-@media screen and (max-width: 600px) {
-    .ez-responsive{
-        border: 0;
-        box-shadow: 0px 0px 0px rgba(0, 0, 0, 0.13);
-        -webkit-box-shadow: 0px 0px 0px rgba(0, 0, 0, 0.13);
-        -moz-box-shadow: 0px 0px 0px rgba(0, 0, 0, 0.13);
-    }
-    .ez-responsive thead {
-        display: none;
-    }
-    .ez-responsive tr {
-        margin-bottom: 15px;
-        display:block;
-        border-bottom: 1px solid #ddd;
-        box-shadow: 5px 5px 10px rgba(0, 0, 0, 0.13);
-        -webkit-box-shadow: 5px 5px 10px rgba(0, 0, 0, 0.13);
-        -moz-box-shadow: 5px 5px 10px rgba(0, 0, 0, 0.13);
-    }
-    .ez-responsive td {
-        display:block;
-        text-align:right;
-        font-size: 15px;
-        border-bottom: 2px dotted #ccc;
-    }
-    .ez-responsive td:last-child {
-        border-bottom: 0;
-    }
-    .ez-responsive td:before {
-        content: attr(data-label);
-        float:left;
-        text-transform: uppercase;
-        font: bold 1.2em 'Abril Fatface', 'verdana', 'arial';
-    }
-}
 
 
-/*     End of Responsive table     */
+/*     End of Responsive table -moved to bottom    */
 
 
 /*     Start of Striped table     */
@@ -436,6 +550,8 @@ section {
     text-transform:uppercase;
 }
 
+/*to use placeholder text as a label replacement, use an accessible hiding technique for the labels.*/
+
 .ez-form label {
     display:block;
     width: 95%;
@@ -483,13 +599,137 @@ section {
     margin:5px auto;
 }
     
-@media only screen and (min-width: 450px) {
-    
+
+
+/*********************    END OF FORM STYLES    **********************/
+
+
+
+input[type="search"]::-webkit-search-cancel-button {
+  /* Remove default 
+  -webkit-appearance: none;
+  /* Now your own custom styles */
+  height: 10px;
+  width: 10px;
+  background: red;
+  /* Will place small red box on the right of input (positioning carries over) */
 }
 
-@media only screen and (min-width: 960px) {
+
+ol,
+ul{
+    margin-top: 0; 
+    margin-bottom: 1rem; 
+    list-style: none;}
+
+
+
+/* --------- CODE ----------*/
+code, kbd, samp, pre{font-family: monospace; font-size: 1em;}
+
+code {
+  padding: 2px 4px;
+  font-size: 90%;
+  color: #c7254e;
+  background-color: #f9f2f4;
+  border-radius: 4px;
+}
+
+kbd {
+  padding: 2px 4px;
+  font-size: 90%;
+  color: #fff;
+  background-color: #333;
+  border-radius: 3px;
+  -webkit-box-shadow: inset 0 -1px 0 rgba(0, 0, 0, .25);
+          box-shadow: inset 0 -1px 0 rgba(0, 0, 0, .25);
+}
+kbd kbd {
+  padding: 0;
+  font-size: 100%;
+  font-weight: bold;
+  -webkit-box-shadow: none;
+          box-shadow: none;
+}
+pre {
+  display: block;
+  padding: 9.5px;
+  margin: 0 0 10px;
+  font-size: 13px;
+  line-height: 1.42857143;
+  color: #333;
+  word-break: break-all;
+  word-wrap: break-word;
+  background-color: #f5f5f5;
+  border: 1px solid #ccc;
+  border-radius: 4px;
+}
+pre code {
+  padding: 0;
+  font-size: inherit;
+  color: inherit;
+  white-space: pre-wrap;
+  background-color: transparent;
+  border-radius: 0;
+}
+
+
+
+/* --------- BREAKPOINTS ----------*/
+/*  GO FULL WIDTH BELOW 480 PIXELS @media queries as soon as the screen size gets less than 480 pixels the columns stack and the margins disappear.*/
+@media only screen and (max-width: 480px) {
+	.col {  margin: 1% 0 1% 0%; }
+    
+    .col-1-12, .col-2-12, .col-3-12, .col-4-12, .col-5-12, .col-6-12, .col-7-12, .col-8-12, .col-9-12, .col-10-12, .col-11-12, .col-12-12 {
+	width: 100%; 
+	}
+}
+
+@media only screen and (device-width: 768px) {
+  /* For general iPad layouts */
+    .ez-responsive{
+        border: 0;
+        box-shadow: 0px 0px 0px rgba(0, 0, 0, 0.13);
+        -webkit-box-shadow: 0px 0px 0px rgba(0, 0, 0, 0.13);
+        -moz-box-shadow: 0px 0px 0px rgba(0, 0, 0, 0.13);
+    }
+    .ez-responsive thead {
+        display: none;
+    }
+    .ez-responsive tr {
+        margin-bottom: 15px;
+        display:block;
+        border-bottom: 1px solid #ddd;
+        box-shadow: 5px 5px 10px rgba(0, 0, 0, 0.13);
+        -webkit-box-shadow: 5px 5px 10px rgba(0, 0, 0, 0.13);
+        -moz-box-shadow: 5px 5px 10px rgba(0, 0, 0, 0.13);
+    }
+    .ez-responsive td {
+        display:block;
+        text-align:right;
+        font-size: 15px;
+        border-bottom: 2px dotted #ccc;
+    }
+    .ez-responsive td:last-child {
+        border-bottom: 0;
+    }
+    .ez-responsive td:before {
+        content: attr(data-label);
+        float:left;
+        text-transform: uppercase;
+        font: bold 1.2em 'Abril Fatface', 'verdana', 'arial';
+    }
+
+}
+
+@media only screen and (min-device-width: 481px) and (max-device-width: 992px) and (orientation:portrait) {
+  /* For portrait layouts only */
+}
+
+@media only screen and (min-device-width: 481px) and (max-device-width: 1200px) and (orientation:landscape) {
+  /* For landscape layouts only */
     .ez-form {
-        max-width:900px;
+        max-width:1200px;
         margin: 10px auto;
     }
     .ez-form h1 {
@@ -545,79 +785,101 @@ section {
     }
     
 }
-
-/*********************    END OF FORM STYLES    **********************/
-
-/*
-fieldset{
-    border:0; 
-    padding:0.35 0.75em 0.625em; margin:0;}
-
-button, 
-input, 
-optgroup, 
-select, 
-textarea {
-    font-size: 100%; 
-    line-height: 1.15; 
-    margin:0;}
-
-label{
-    display:block;
 }
 
-[type="checkbox"],
-[type="radio"] {
-  box-sizing: border-box;   
+/* ------ NO-PRINT -----------*/
+@media print
+{    
+    .no-print, .no-print *
+    {
+        display: none !important;
+    }
 }
 
-[type="search"] {
-  -webkit-appearance: textfield;
-    outline-offset: -2px;
-    border-radius: 15px;
-    height:1.6em;
-    letter-spacing:1px;
-    word-spacing: 2px;
+/* BUTTONS */
+button {
+    border-bottom: 4px solid silver;
+    border-left: 3px solid silver;
+    border-right: 3px solid silver;
+    border-radius: 180px;
+    background-color: red;
+    box-shadow: 2px 2px 2px 2px grey;
+    width: 80px;
+    height: 80px;
+    color:white;
+    font-size: 1em;
 }
-*/
-
-input[type="search"]::-webkit-search-cancel-button {
-  /* Remove default 
-  -webkit-appearance: none;
-  /* Now your own custom styles */
-  height: 10px;
-  width: 10px;
-  background: red;
-  /* Will place small red box on the right of input (positioning carries over) */
+button:hover {
+   background-color: blueviolet;
 }
-
-/*
-ol,
-ul{
-    margin-top: 0; 
-    margin-bottom: 1rem; 
-    list-style: none;}
-*/
-
-
-/* --------- CODE ----------*/
-code, kbd, samp{font-family: monospace; font-size: 1em;}
-
-pre{margin-top: 0; margin-bottom: .5rem; font-size: 1em;}
-
-
-/* --------- BREAKPOINTS ----------*/
-
-@media only screen and (device-width: 768px) {
-  /* For general iPad layouts */
+button:active {
+    background: green;
+    width: 90px;
+    height: 90px;   
 }
-
-@media only screen and (min-device-width: 481px) and (max-device-width: 1024px) and (orientation:portrait) {
-  /* For portrait layouts only */
+.EZbtn-lg{
+    border-bottom: 7px solid silver;
+    border-left: 4px solid silver;
+    border-right: 4px solid silver;
+    background: red;
+    box-shadow: 3px 3px 3px 3px grey;
+    width: 100px;
+    height: 100px;
+    color:white;
+    font-size: 1.2em;
 }
-
-@media only screen and (min-device-width: 481px) and (max-device-width: 1024px) and (orientation:landscape) {
-  /* For landscape layouts only */
+.EZbtn-lg:active {
+    width:110px;
+    height: 110px;
+    
 }
-
-/* ------ NO PRINT -----------*/
+.EZbtn-sm{
+    border-bottom: 3px solid silver;
+    border-left: 2px solid silver;
+    border-right: 2px solid silver;
+    background: red;
+    box-shadow: 1px 1px 1px 1px grey;
+    width: 70px;
+    height: 70px;
+    color:white;
+    font-size:.5em; 
+}
+.EZbtn-sm:active {
+    width:80px;
+    height: 80px;
+}
+.EZbtn-xsm{
+    border-bottom: 2px solid silver;
+    border-left: 1px solid silver;
+    border-right: 1px solid silver;
+    background: red;
+    box-shadow: 1px 1px 1px 1px grey;
+    width: 60px;
+    height: 60px;
+    color:white;
+    font-size: .2em;
+}
+.EZbtn-xsm:active {
+    width:70px;
+    height: 70px;
+}
+input[type]{
+    border: 5px solid green;
+    display: inline;
+    height: auto;
+    padding: 3%;
+    background-color: white;
+    border-radius: 90px;
+}
+input[type=button]{
+    border: 5px solid red;
+    font-size-adjust: auto;
+}
+input[type]:hover{
+    box-shadow: 0 12px 16px 0 rgba(0,0,0,0.24), 0 17px 50px 0 rgba(0,0,0,0.19);
+    font-size-adjust: auto;
+}
+input[type]:active{
+    padding: 7%;
+}
+/* END BUTTON SECTION */
