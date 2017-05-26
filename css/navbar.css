@@ -1,0 +1,128 @@
+/* STYLES FOR DEFAULT NAV BAR */
+.nav-menu {
+    font-family: Helvetica, sans-serif;
+    font-size: 28px; 
+    width: 100%;
+}
+
+.nav-menu ul {
+    list-style-type: none;
+    margin: 0;
+    padding: 0;
+    overflow: hidden;
+    background-color: #3B3F45;
+}
+
+.nav-menu li {
+    float: left;
+}
+
+.nav-menu li a, .nav-menu a {
+    display: inline-block;
+    color: white;
+    text-align: center;
+    padding: 14px 16px;
+    text-decoration: none;
+}
+
+.nav-menu .active {
+    background-color: #3e5e64;
+}
+
+.nav-menu li a:hover, .nav-menu a:hover {
+    background-color: #575755;
+}
+
+/* START OF STICKY NAV */
+
+.fixed {
+    position:fixed;
+    top:0;
+    left: 0;
+    z-index:1000000;
+    width:100%;
+    background-color:transparent;
+}
+.fixed .nav-inner {
+    max-width: 700px;
+    margin: 0 auto;
+    background-color: #3B3F45;
+}
+
+/* END OF STICKY NAV */
+
+/* MENU ICON */
+.nav-menu .menu-icon {
+  display: none;
+}
+
+/* STYLES FOR DROPDOWN MENU */
+.dropbtn {
+    display: inline-block;
+    color: white;
+    text-align: center;
+    padding: 14px 16px;
+    text-decoration: none;
+}
+
+.nav-menu .dropdown-menu:hover .dropbtn {
+    background-color: #575755;
+}
+
+.nav-menu li.dropdown-menu {
+    display: inline-block;
+}
+
+.nav-menu .dropdown-content {
+    display: none;
+    position: absolute;
+    background-color: #3B3F45;
+    min-width: 160px;
+    box-shadow: 0px 8px 16px 0px rgba(0,0,0,0.2);
+    z-index: 1;
+}
+
+.nav-menu .dropdown-content a {
+    color: #FFFFFF;
+    padding: 12px 16px;
+    text-decoration: none;
+    display: block;
+    text-align: left;
+}
+
+.nav-menu .dropdown-content a:hover {
+    background-color: #3e5e64;
+}
+
+.nav-menu .dropdown-menu:hover .dropdown-content {
+    display: block;
+}
+
+/* MEDIA QUERIES */
+/* MEDIA QUERIES FOR MENU ICON */
+@media only screen and (max-width: 960px) {
+    .nav-menu li:not(:first-child) {
+        display: none;
+    }
+    .nav-menu .menu-icon {
+        display: block;
+        float:right;
+    }
+}
+/* MEDIA QUERIES FOR SHOWING MENU ON ICON CLICK */
+@media screen and (max-width: 960px) {
+  .nav-menu.responsive {
+      position: relative;
+    }
+  .nav-menu.responsive .menu-icon {
+    position: absolute;
+    right: 0;
+    top: 0;
+  }
+  .nav-menu.responsive ul li {
+    float: none;
+    display: block;
+    text-align: left;
+  }
+
+}
